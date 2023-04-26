@@ -32,7 +32,7 @@ export default function Result(){
                         color='black'
                         fontFamily="mono"
                         >
-                           Passport
+                           Passaporte
                         </Heading>
                         <Center>
                             <Image src="/brasao.png"
@@ -47,7 +47,7 @@ export default function Result(){
                         color='#36454F'
                         fontFamily="inherit"
                         >
-                            Name
+                            Nome
                         </Heading>
                         <Text
                         noOfLines={1}
@@ -75,7 +75,7 @@ export default function Result(){
                         color='#36454F'
                         fontFamily="inherit"
                         >
-                            Birthdate
+                            Data de Nascimento
                         </Heading>
                         <Text
                         noOfLines={1}
@@ -89,7 +89,7 @@ export default function Result(){
                         color='#36454F'
                         fontFamily="inherit"
                         >
-                            Age
+                            Idade
                         </Heading>
                         <Text
                         noOfLines={1}

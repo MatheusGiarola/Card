@@ -45,7 +45,7 @@ export function Information() {
                         borderColor={'blue'} 
                         borderRadius={1}
                     >
-                        <InputLeftAddon children='Name' />
+                        <InputLeftAddon children='Nome' />
                         <Input 
                             focusBorderColor='#00ffff'
                             value={name}
@@ -59,7 +59,7 @@ export function Information() {
                         borderColor={'blue'} 
                         borderRadius={1}
                     >
-                        <InputLeftAddon children='Surname'/>
+                        <InputLeftAddon children='Sobrenome'/>
                         <Input 
                             focusBorderColor='#00ffff'
                             value={surname}
@@ -87,7 +87,7 @@ export function Information() {
                         borderColor={'blue'} 
                         borderRadius={1}
                     >
-                        <InputLeftAddon children='Birthdate' />
+                        <InputLeftAddon children='Data de Nascimento' />
                         <Input 
                             focusBorderColor='#00ffff'
                             value={birthdate}
@@ -101,7 +101,7 @@ export function Information() {
                         borderColor={'blue'} 
                         borderRadius={1}
                     >
-                        <InputLeftAddon children='Age' />
+                        <InputLeftAddon children='Idade' />
                         <Input 
                             focusBorderColor='#00ffff'
                             value={age}
@@ -124,7 +124,7 @@ export function Information() {
                         fontSize='2rem'
                         textAlign='center'
                     >
-                        Submit
+                        Enviar
                     </Button>
                 </Link>
             </Center>

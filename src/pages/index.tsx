@@ -15,7 +15,7 @@ export default function Home() {
         borderColor='blue.300'
         padding='1.5rem'
           >
-            Create your card!
+            Crie seu passaporte!
           </Heading>
         </Box>
       </Center>
