@@ -1,4 +1,6 @@
- //Usar o hook useEffect pra toast
+import React,{ useState } from "react";
+import Link from "next/link";
+
 import { Input, 
     InputGroup, 
     InputLeftAddon, 
@@ -7,10 +9,9 @@ import { Input,
     Button,
     Center,
 } from "@chakra-ui/react";
-import React,{ useState } from "react";
-import Link from "next/link";
 
 export function Information() {
+    
     const[name, setName]= useState('');
     const changeName = 
     (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
@@ -34,18 +35,19 @@ export function Information() {
     return (
         <div>
             <Box 
-                bgColor={'#ffe7b3'} 
-                padding={'1.25rem'} 
-                borderRadius={'lg'}
+                bgColor='#ffe7b3' 
+                padding='1.25rem' 
+                borderRadius='lg'
                 border='2px'
                 borderColor='blue'
             >
-                <Stack spacing={8}>
+                <Stack spacing='8'>
                     <InputGroup size='lg' 
-                        borderColor={'blue'} 
-                        borderRadius={1}
+                        borderColor='blue'
+                        borderRadius='1'
                     >
                         <InputLeftAddon children='Nome' />
+
                         <Input 
                             focusBorderColor='#00ffff'
                             value={name}
@@ -56,10 +58,11 @@ export function Information() {
                     </InputGroup>
 
                     <InputGroup size='lg' 
-                        borderColor={'blue'} 
-                        borderRadius={1}
+                        borderColor='blue' 
+                        borderRadius='1'
                     >
                         <InputLeftAddon children='Sobrenome'/>
+
                         <Input 
                             focusBorderColor='#00ffff'
                             value={surname}
@@ -70,10 +73,11 @@ export function Information() {
                     </InputGroup>
 
                     <InputGroup size='lg' 
-                        borderColor={'blue'} 
-                        borderRadius={1}
+                        borderColor='blue' 
+                        borderRadius='1'
                     >
                         <InputLeftAddon children='CPF' />
+
                         <Input 
                             focusBorderColor='#00ffff'
                             value={cpf}
@@ -84,10 +88,11 @@ export function Information() {
                     </InputGroup>
 
                     <InputGroup size='lg' 
-                        borderColor={'blue'} 
-                        borderRadius={1}
+                        borderColor='blue' 
+                        borderRadius='1'
                     >
                         <InputLeftAddon children='Data de Nascimento' />
+
                         <Input 
                             focusBorderColor='#00ffff'
                             value={birthdate}
@@ -98,10 +103,11 @@ export function Information() {
                     </InputGroup>
 
                     <InputGroup size='lg' 
-                        borderColor={'blue'} 
-                        borderRadius={1}
+                        borderColor='blue' 
+                        borderRadius='1'
                     >
                         <InputLeftAddon children='Idade' />
+
                         <Input 
                             focusBorderColor='#00ffff'
                             value={age}
@@ -113,8 +119,9 @@ export function Information() {
                 </Stack>
             </Box>
             <br />
+
             <Center>
-                <Link href='http://localhost:3000/result/card'>
+                <Link href='/result/card'>
                     <Button   height='60px'
                         width='240px'
                         border='4px'

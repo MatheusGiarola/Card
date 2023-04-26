@@ -1,4 +1,7 @@
 import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+
 import { Center, 
     Image, 
     Card, 
@@ -9,8 +12,6 @@ import { Center,
     Text, 
     Box,
     Button} from '@chakra-ui/react'
-import Head from 'next/head';
-import Link from 'next/link';
 
 export default function Result(){
     return (
@@ -18,8 +19,10 @@ export default function Result(){
             <Head>
                 <title>Seu cartão está pronto!</title>
             </Head>
+
             <br />
             <br />
+
             <Center>
                 <Card bgColor='#eadbcb'
                     borderRadius="2xl"
@@ -34,6 +37,7 @@ export default function Result(){
                         >
                            Passaporte
                         </Heading>
+
                         <Center>
                             <Image src="/brasao.png"
                             width='16rem'
@@ -49,6 +53,7 @@ export default function Result(){
                         >
                             Nome
                         </Heading>
+
                         <Text
                         noOfLines={1}
                         as='i'
@@ -63,6 +68,7 @@ export default function Result(){
                         >
                             CPF
                         </Heading>
+
                         <Text
                         noOfLines={1}
                         as='i'
@@ -77,6 +83,7 @@ export default function Result(){
                         >
                             Data de Nascimento
                         </Heading>
+
                         <Text
                         noOfLines={1}
                         as='i'
@@ -91,13 +98,14 @@ export default function Result(){
                         >
                             Idade
                         </Heading>
+
                         <Text
                         noOfLines={1}
                         as='i'
                         size='lg'
                         >
                             Age goes here 
-                            </Text>
+                        </Text>
                     </CardBody>
                     
                     <CardFooter>
@@ -113,7 +121,7 @@ export default function Result(){
 
             <Center h='5rem'>
                 <Link href='/'>
-                    <Button size='sm'>Página Inicial</Button>
+                    <Button size='md'>Página Inicial</Button>
                 </Link>
             </Center>
         </Box>

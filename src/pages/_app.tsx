@@ -1,14 +1,20 @@
 import { AppProps } from "next/app";
-import { ChakraProvider, Image } from "@chakra-ui/react"; 
 import Head from "next/head";
 
+import { ChakraProvider, Image } from "@chakra-ui/react"; 
+
 export default function App({Component, pageProps }: AppProps) {
+
     return(
         <ChakraProvider>
             <Head>
                 <title>Página inicial</title>
-                <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+                <link rel="shortcut icon" 
+                    href="/brand.png" 
+                    type="image/png" 
+                />
             </Head>
+
             <div style={{
                 position: 'fixed',
                 top: 0,
@@ -34,5 +40,5 @@ export default function App({Component, pageProps }: AppProps) {
                 />
             </div>
         </ChakraProvider>
-    )    
+    ); 
 }
