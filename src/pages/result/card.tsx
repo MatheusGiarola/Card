@@ -1,9 +1,23 @@
 import React from 'react';
-import { Center, Image, Card, CardHeader, CardBody, CardFooter, Heading, Text, AbsoluteCenter, Box } from '@chakra-ui/react'
+import { Center, 
+    Image, 
+    Card, 
+    CardHeader, 
+    CardBody, 
+    CardFooter, 
+    Heading, 
+    Text, 
+    Box,
+    Button} from '@chakra-ui/react'
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Result(){
     return (
         <Box>
+            <Head>
+                <title>Seu cartão está pronto!</title>
+            </Head>
             <br />
             <br />
             <Center>
@@ -95,6 +109,12 @@ export default function Result(){
                         </Text>
                     </CardFooter>
                 </Card>
+            </Center>
+
+            <Center h='5rem'>
+                <Link href='/'>
+                    <Button size='sm'>Página Inicial</Button>
+                </Link>
             </Center>
         </Box>
     );

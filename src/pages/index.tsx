@@ -1,5 +1,5 @@
 import { Heading, Center, Box} from '@chakra-ui/react';
-import { Information } from '../../components/input';
+import { Information } from '../../components/information';
 
 export default function Home() {
   
