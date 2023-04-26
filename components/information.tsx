@@ -40,7 +40,7 @@ export function Information() {
                 border='2px'
                 borderColor='blue'
             >
-                <Stack spacing={4}>
+                <Stack spacing={8}>
                     <InputGroup size='lg' 
                         borderColor={'blue'} 
                         borderRadius={1}
