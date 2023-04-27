@@ -10,17 +10,17 @@ import { Heading,
   Image} from '@chakra-ui/react';
 
 export default function Home() {
-
+  
   return (
     <div>
       <Head>
-        <title>Página inicial</title>
+        <title>Homepage</title>
         <link rel="shortcut icon" 
           href="/brand.png" 
           type="image/png" 
         />
       </Head>
-      
+
       <Center h= '15rem'>
         <Box>
           <Heading size='4xl' 
@@ -31,7 +31,7 @@ export default function Home() {
             borderColor='blue.300'
             padding='1.5rem'
           >
-            Crie seu passaporte!
+            Create your Passport!
           </Heading>
         </Box>
       </Center>
@@ -40,13 +40,13 @@ export default function Home() {
         <Information />
       </Center>
 
-      <Link href='/en'>
+      <Link href='/'>
         <Button position="absolute"
           bottom="1rem"
           right="1rem" 
           border='2px'
         >
-          <Image src='/enflag.svg'
+          <Image src='/ptflag.svg'
             width='2rem'
             height='2rem'
           />
@@ -54,7 +54,7 @@ export default function Home() {
           <Text fontSize='1.25rem' 
             paddingLeft='0.2rem'
           >
-            English
+            Português
           </Text>
         </Button>
       </Link>

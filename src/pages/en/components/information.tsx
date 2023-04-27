@@ -46,14 +46,14 @@ export function Information() {
                         borderColor='blue'
                         borderRadius='1'
                     >
-                        <InputLeftAddon children='Nome' />
+                        <InputLeftAddon children='Name' />
 
                         <Input 
                             focusBorderColor='#00ffff'
                             value={name}
                             onChange={changeName} 
                             variant='outline' 
-                            placeholder="Ex: João"
+                            placeholder="E.g. John"
                         />
                     </InputGroup>
 
@@ -61,14 +61,14 @@ export function Information() {
                         borderColor='blue' 
                         borderRadius='1'
                     >
-                        <InputLeftAddon children='Sobrenome'/>
+                        <InputLeftAddon children='Surname'/>
 
                         <Input 
                             focusBorderColor='#00ffff'
                             value={surname}
                             onChange={changeSurname} 
                             variant='outline' 
-                            placeholder="Ex: Silva"
+                            placeholder="E.g. Smith"
                         />
                     </InputGroup>
 
@@ -83,7 +83,7 @@ export function Information() {
                             value={cpf}
                             onChange={changeCpf} 
                             variant='outline' 
-                            placeholder="Ex: 123.456.789-01"
+                            placeholder="E.g. 123.456.789-01"
                         />
                     </InputGroup>
 
@@ -91,14 +91,14 @@ export function Information() {
                         borderColor='blue' 
                         borderRadius='1'
                     >
-                        <InputLeftAddon children='Data de Nascimento' />
+                        <InputLeftAddon children='Birthdate' />
 
                         <Input 
                             focusBorderColor='#00ffff'
                             value={birthdate}
                             onChange={changeBirthdate} 
                             variant='outline' 
-                            placeholder="Ex: 14/05/2003"
+                            placeholder="E.g. 05/14/2003"
                         />
                     </InputGroup>
 
@@ -106,14 +106,14 @@ export function Information() {
                         borderColor='blue' 
                         borderRadius='1'
                     >
-                        <InputLeftAddon children='Idade' />
+                        <InputLeftAddon children='Age' />
 
                         <Input 
                             focusBorderColor='#00ffff'
                             value={age}
                             onChange={changeAge} 
                             variant='outline' 
-                            placeholder="Ex: 20"
+                            placeholder="E.g. 20"
                         />
                     </InputGroup>
                 </Stack>
@@ -121,7 +121,7 @@ export function Information() {
             <br />
 
             <Center>
-                <Link href='/result/card'>
+                <Link href='/en/result/card'>
                     <Button   height='60px'
                         width='240px'
                         border='4px'
@@ -131,7 +131,7 @@ export function Information() {
                         fontSize='2rem'
                         textAlign='center'
                     >
-                        Enviar
+                        Submit
                     </Button>
                 </Link>
             </Center>
