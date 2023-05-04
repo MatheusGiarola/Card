@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -14,6 +15,25 @@ import { Center,
     Button} from '@chakra-ui/react'
 
 export default function Result(){
+    
+    //const router = useRouter();
+    //const { name, surname, cpf } = router.query;
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("/api/contact");
+      const json = await res.json();
+      setData(json);
+    };
+
+    fetchData();
+  }, []);
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+
     return (
         <Box>
             <Head>
@@ -59,7 +79,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                            Name and surname goes here 
+                            {data.name}
                         </Text>
 
                         <Heading size= 'lg'

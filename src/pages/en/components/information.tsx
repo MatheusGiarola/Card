@@ -32,6 +32,17 @@ export function Information() {
     const changeAge = 
     (event: React.ChangeEvent<HTMLInputElement>) => setAge(event.target.value);
 
+    const button = document.getElementById('meuBotao');
+
+
+    function isFilled(){
+        return true
+    };
+
+    const handleSubmit = (event) => {{
+        if (isFilled()) {
+        event.preventDefault();}}}
+
     return (
         <div>
             <Box 
@@ -130,6 +141,7 @@ export function Information() {
                         borderRadius='full' 
                         fontSize='2rem'
                         textAlign='center'
+                        onClick={handleSubmit}
                     >
                         Submit
                     </Button>
