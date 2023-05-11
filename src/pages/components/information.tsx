@@ -40,13 +40,13 @@ export function Information() {
 
     const router = useRouter();
 
-    const handleSubmit = async (event: FormEvent) => {
+     const handleSubmit = async (event: FormEvent) => {
         if (isFilled()) {
             event.preventDefault();
             //router.push(`/result/card?name=${name}&surname=${surname}&cpf=${cpf}&birthdate=${birthdate}&age=${age}`);
             const res = await fetch("/api/form", {
                 method: "POST",
-                body: JSON.stringify({ name, surname, cpf }),
+                body: JSON.stringify({ name, surname, cpf, birthdate, age }),
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -55,8 +55,7 @@ export function Information() {
             if (res.ok) {
                 router.push('/result/card');
             } else {
-                alert('string')
-                //handle error
+                alert('Um erro inesperado aconteceu. Tente recarregar a página e preencha novamente')
             }
         }
     };

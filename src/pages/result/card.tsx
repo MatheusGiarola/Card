@@ -14,15 +14,23 @@ import { Center,
     Box,
     Button} from '@chakra-ui/react'
 
+    type FormData ={
+        name:string;
+        surname: string;
+        cpf:string;
+        birthdate:string;
+        age:string;
+    }
+
 export default function Result(){
     
     //const router = useRouter();
     //const { name, surname, cpf } = router.query;
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<FormData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("/api/contact");
+      const res = await fetch("/api/form");
       const json = await res.json();
       setData(json);
     };
@@ -31,7 +39,7 @@ export default function Result(){
   }, []);
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <Heading>Carregando...</Heading>;
   }
 
     return (
@@ -79,7 +87,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                            {data.name}
+                        {data.name} {data.surname}
                         </Text>
 
                         <Heading size= 'lg'
@@ -94,7 +102,7 @@ export default function Result(){
                         as='i'
                         size='lg'                    
                         >
-                            CPF goes here 
+                            {data.cpf} 
                         </Text>
 
                         <Heading size= 'lg'
@@ -109,7 +117,7 @@ export default function Result(){
                         as='i'
                         size='lg'                    
                         >
-                            Birthdate goes here 
+                            {data.birthdate} 
                         </Text>
 
                         <Heading size= 'lg'
@@ -124,7 +132,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                            Age goes here 
+                            {data.age}
                         </Text>
                     </CardBody>
                     
