@@ -1,6 +1,8 @@
 import React, { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import * as yup from 'yup';
+
 
 import {
     Input,
@@ -13,6 +15,23 @@ import {
 } from "@chakra-ui/react";
 
 export function Information() {
+
+    const formSchema = yup.object().shape({
+        name: yup.string()
+                .min(2),
+
+            surname: yup.string()
+            .min(2),
+
+            cpf: yup.string()
+                .min(11),
+
+            birthdate: yup.string()
+                .min(6),
+
+            age: yup.string()
+                .min(1),
+    })
 
     const [name, setName] = useState('');
     const changeName =
@@ -34,32 +53,40 @@ export function Information() {
     const changeAge =
         (event: React.ChangeEvent<HTMLInputElement>) => setAge(event.target.value);
 
-    function isFilled() {
-        return true
-    };
-
     const router = useRouter();
-
-     const handleSubmit = async (event: FormEvent) => {
-        if (isFilled()) {
-            event.preventDefault();
-            //router.push(`/result/card?name=${name}&surname=${surname}&cpf=${cpf}&birthdate=${birthdate}&age=${age}`);
-            const res = await fetch("/api/form", {
-                method: "POST",
-                body: JSON.stringify({ name, surname, cpf, birthdate, age }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            if (res.ok) {
-                router.push('/result/card');
-            } else {
-                alert('Um erro inesperado aconteceu. Tente recarregar a página e preencha novamente')
-            }
+    const handleSubmit = async (event: FormEvent) => {
+        event.preventDefault();
+      
+        try {
+          await formSchema.validate({
+            name,
+            surname,
+            cpf,
+            age,
+            birthdate
+          });
+      
+          const res = await fetch("/api/form", {
+            method: "POST",
+            body: JSON.stringify({ name, surname, cpf, birthdate, age }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+      
+          if (res.ok) {
+            router.push('/result/card');
+          } else {
+            alert('Um erro inesperado aconteceu. Tente recarregar a página e preencha novamente')
+          }
+        } catch (err) {
+          alert('Preencha todos os campos corretamente');
+          console.log(err)
         }
-    };
-
+      };
+      
+      
+    
     return (
         <div>
             <Box

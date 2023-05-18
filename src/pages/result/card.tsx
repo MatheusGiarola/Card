@@ -24,8 +24,6 @@ import { Center,
 
 export default function Result(){
     
-    //const router = useRouter();
-    //const { name, surname, cpf } = router.query;
   const [data, setData] = useState<FormData | null>(null);
 
   useEffect(() => {
