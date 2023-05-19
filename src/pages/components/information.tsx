@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import * as yup from 'yup';
 
 
@@ -56,7 +55,6 @@ export function Information() {
     const router = useRouter();
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
-      
         try {
           await formSchema.validate({
             name,
@@ -176,7 +174,6 @@ export function Information() {
             <br />
 
             <Center>
-                <Link href='/result/card'>
                     <Button height='60px'
                         width='240px'
                         border='4px'
@@ -189,7 +186,6 @@ export function Information() {
                     >
                         Enviar
                     </Button>
-                </Link>
             </Center>
         </div>
     );
