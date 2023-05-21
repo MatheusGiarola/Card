@@ -28,13 +28,16 @@ export default function Result(){
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("/api/form");
+      const res = await fetch("/api/form", {
+        method: "POST",
+      });
       const json = await res.json();
       setData(json);
     };
-
+  
     fetchData();
   }, []);
+  
 
   if (!data) {
     return <Heading>Carregando...</Heading>;
