@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -13,7 +14,24 @@ import { Center,
     Box,
     Button} from '@chakra-ui/react'
 
+    type FormData ={
+        name:string;
+        surname: string;
+        cpf:string;
+        birthdate:string;
+        age:string;
+    }
+
 export default function Result(){
+    
+    const [cookies] = useCookies(['name', 'surname', 'cpf', 'birthdate', 'age']);
+
+    const name = cookies.name;
+    const surname = cookies.surname;
+    const cpf = cookies.cpf;
+    const age = cookies.age;
+    const birthdate = cookies.birthdate;
+
     return (
         <Box>
             <Head>
@@ -59,7 +77,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                            Name and surname goes here 
+                        {name} {surname}
                         </Text>
 
                         <Heading size= 'lg'
@@ -74,7 +92,7 @@ export default function Result(){
                         as='i'
                         size='lg'                    
                         >
-                            CPF goes here 
+                            {cpf} 
                         </Text>
 
                         <Heading size= 'lg'
@@ -89,7 +107,7 @@ export default function Result(){
                         as='i'
                         size='lg'                    
                         >
-                            Birthdate goes here 
+                            {birthdate} 
                         </Text>
 
                         <Heading size= 'lg'
@@ -104,7 +122,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                            Age goes here 
+                            {age}
                         </Text>
                     </CardBody>
                     
