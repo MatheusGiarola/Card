@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useCookies } from 'react-cookie';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -24,24 +24,13 @@ import { Center,
 
 export default function Result(){
     
-  const [data, setData] = useState<FormData | null>(null);
+    const [cookies] = useCookies(['name', 'surname', 'cpf', 'birthdate', 'age']);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/form", {
-        method: "POST",
-      });
-      const json = await res.json();
-      setData(json);
-    };
-  
-    fetchData();
-  }, []);
-  
-
-  if (!data) {
-    return <Heading>Carregando...</Heading>;
-  }
+    const name = cookies.name;
+    const surname = cookies.surname;
+    const cpf = cookies.cpf;
+    const age = cookies.age;
+    const birthdate = cookies.birthdate;
 
     return (
         <Box>
@@ -88,7 +77,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                        {data.name} {data.surname}
+                        {name} {surname}
                         </Text>
 
                         <Heading size= 'lg'
@@ -103,7 +92,7 @@ export default function Result(){
                         as='i'
                         size='lg'                    
                         >
-                            {data.cpf} 
+                            {cpf} 
                         </Text>
 
                         <Heading size= 'lg'
@@ -118,7 +107,7 @@ export default function Result(){
                         as='i'
                         size='lg'                    
                         >
-                            {data.birthdate} 
+                            {birthdate} 
                         </Text>
 
                         <Heading size= 'lg'
@@ -133,7 +122,7 @@ export default function Result(){
                         as='i'
                         size='lg'
                         >
-                            {data.age}
+                            {age}
                         </Text>
                     </CardBody>
                     

@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
 import * as yup from 'yup';
+import { useCookies } from 'react-cookie';
 
 
 import {
@@ -53,34 +54,42 @@ export function Information() {
         (event: React.ChangeEvent<HTMLInputElement>) => setAge(event.target.value);
 
     const router = useRouter();
+    const [cookies, setCookie] = useCookies(['name', 'surname', 'cpf', 'birthdate', 'age']);
+
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         try {
-          await formSchema.validate({
-            name,
-            surname,
-            cpf,
-            age,
-            birthdate
-          });
-      
-          const res = await fetch("/api/form", {
-            method: "POST",
-            body: JSON.stringify({ name, surname, cpf, birthdate, age }),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-      
-          if (res.ok) {
-            router.push('/result/card');
-          } else {
-            alert('Um erro inesperado aconteceu. Tente recarregar a página e preencha novamente')
+            await formSchema.validate({
+              name,
+              surname,
+              cpf,
+              age,
+              birthdate
+            });
+        
+            const res = await fetch("/api/form", {
+              method: "POST",
+              body: JSON.stringify({ name, surname, cpf, birthdate, age }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+        
+            if (res.ok) {
+                setCookie('name', name);
+                setCookie('surname', surname);
+                setCookie('cpf', cpf);
+                setCookie('age', age)
+                setCookie('birthdate', birthdate)
+
+    router.push('/result/card');
+  } else {
+    alert('Um erro inesperado aconteceu. Tente recarregar a página e preencha novamente');
+  }
+          } catch (err) {
+            alert('Preencha todos os campos corretamente');
+            console.log(err)
           }
-        } catch (err) {
-          alert('Preencha todos os campos corretamente');
-          console.log(err)
-        }
       };
       
       
