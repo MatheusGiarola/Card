@@ -27,7 +27,7 @@ export default function Result(){
     return (
         <Box>
             <Head>
-                <title>Seu cartão está pronto!</title>
+                <title>Your card is ready!</title>
             </Head>
 
             <br />
@@ -45,7 +45,7 @@ export default function Result(){
                         color='black'
                         fontFamily="mono"
                         >
-                           Passaporte
+                           Passport
                         </Heading>
 
                         <Center>
@@ -61,7 +61,7 @@ export default function Result(){
                         color='#36454F'
                         fontFamily="inherit"
                         >
-                            Nome
+                            Name
                         </Heading>
 
                         <Text
@@ -91,7 +91,7 @@ export default function Result(){
                         color='#36454F'
                         fontFamily="inherit"
                         >
-                            Data de Nascimento
+                            Birthdate
                         </Heading>
 
                         <Text
@@ -106,7 +106,7 @@ export default function Result(){
                         color='#36454F'
                         fontFamily="inherit"
                         >
-                            Idade
+                            Age
                         </Heading>
 
                         <Text
@@ -131,7 +131,7 @@ export default function Result(){
 
             <Center h='5rem'>
                 <Link href='/'>
-                    <Button size='md'>Página Inicial</Button>
+                    <Button size='md'>Homepage</Button>
                 </Link>
             </Center>
         </Box>
